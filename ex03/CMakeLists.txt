@@ -2,31 +2,26 @@
 cmake_minimum_required(VERSION 3.10)
 
 set(PROJECTNAME testDumbExample)
-project(${PROJECTNAME} VERSION 0.0 LANGUAGES C CXX)
+project(${PROJECTNAME} VERSION 0.0 LANGUAGES C)
 
-set(CPPUTEST_HOME cpputest-3.8)
-
-#the memory leak macros
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -include ${CPPUTEST_HOME}/include/CppUTest/MemoryLeakDetectorNewMacros.h")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -include ${CPPUTEST_HOME}/include/CppUTest/MemoryLeakDetectorMallocMacros.h")
+set(UNITY_HOME unity-2.5.2)
 
 include_directories(
 	.
-	${CPPUTEST_HOME}/include
+	${UNITY_HOME}/include
 )
 
 link_directories(
-	${CPPUTEST_HOME}/lib
+	${UNITY_HOME}/lib
 )
 
 set(SOURCES
-	testDumbExample.cxx
+	testDumbExample.c
+	dumbExample.c
 )
 
 add_executable(${PROJECTNAME} ${SOURCES})
 
 target_link_libraries(${PROJECTNAME}
-	CppUTest 
-	CppUTestExt
+	unity
 )
-
