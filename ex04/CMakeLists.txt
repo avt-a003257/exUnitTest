@@ -20,6 +20,7 @@ link_directories(
 )
 
 set(SOURCES
+	dumbExample.c
 	testDumbExample.cxx
 )
 
