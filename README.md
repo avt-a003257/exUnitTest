@@ -1,5 +1,9 @@
 # exUnitTest
 
+2021/08/24
+
+	ex05 - LedDriver. Book example ch3~4. Create a test case and make it fail.
+
 2021/08/19 
 	
 	ex02 - change first exercise into using lib. 2021/08/19
